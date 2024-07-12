@@ -1,0 +1,90 @@
+🚀 gf && groh && terraform init && terraform apply
+HEAD is now at d289bf5 test
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp-forge/enos from the dependency lock file
+- Reusing previous version of hashicorp/azurerm from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp-forge/enos v0.5.2
+- Using previously-installed hashicorp/azurerm v3.111.0
+- Using previously-installed hashicorp/random v3.6.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+random_password.password[0]: Refreshing state... [id=none]
+random_password.password[2]: Refreshing state... [id=none]
+random_password.password[1]: Refreshing state... [id=none]
+data.azurerm_virtual_network.existing_vnet: Reading...
+azurerm_resource_group.main: Refreshing state... [id=/subscriptions/f8b14127-d090-4ed7-b5c2-9a1241135b77/resourceGroups/chend-rg]
+data.azurerm_network_security_group.existing_nsg: Reading...
+azurerm_key_vault.main: Refreshing state... [id=/subscriptions/f8b14127-d090-4ed7-b5c2-9a1241135b77/resourceGroups/chend-rg/providers/Microsoft.KeyVault/vaults/chend-rg-keyvault]
+data.azurerm_network_security_group.existing_nsg: Read complete after 0s [id=/subscriptions/f8b14127-d090-4ed7-b5c2-9a1241135b77/resourceGroups/chend-test/providers/Microsoft.Network/networkSecurityGroups/ct-chend-test-nsg]
+data.azurerm_virtual_network.existing_vnet: Read complete after 0s [id=/subscriptions/f8b14127-d090-4ed7-b5c2-9a1241135b77/resourceGroups/LCY2-EU-North-CoreTools-VNET-Dev-RG/providers/Microsoft.Network/virtualNetworks/LCY2-EU-North-CoreTools-VNET-Dev]
+data.azurerm_subnet.existing_subnet: Reading...
+data.azurerm_subnet.existing_subnet: Read complete after 1s [id=/subscriptions/f8b14127-d090-4ed7-b5c2-9a1241135b77/resourceGroups/LCY2-EU-North-CoreTools-VNET-Dev-RG/providers/Microsoft.Network/virtualNetworks/LCY2-EU-North-CoreTools-VNET-Dev/subnets/chend-dev-vm]
+azurerm_network_interface.main[1]: Refreshing state... [id=/subscriptions/f8b14127-d090-4ed7-b5c2-9a1241135b77/resourceGroups/chend-rg/providers/Microsoft.Network/networkInterfaces/nic-1]
+azurerm_network_interface.main[0]: Refreshing state... [id=/subscriptions/f8b14127-d090-4ed7-b5c2-9a1241135b77/resourceGroups/chend-rg/providers/Microsoft.Network/networkInterfaces/nic-0]
+azurerm_network_interface.main[2]: Refreshing state... [id=/subscriptions/f8b14127-d090-4ed7-b5c2-9a1241135b77/resourceGroups/chend-rg/providers/Microsoft.Network/networkInterfaces/nic-2]
+azurerm_virtual_machine.main[0]: Refreshing state... [id=/subscriptions/f8b14127-d090-4ed7-b5c2-9a1241135b77/resourceGroups/chend-rg/providers/Microsoft.Compute/virtualMachines/vm-0]
+azurerm_virtual_machine.main[1]: Refreshing state... [id=/subscriptions/f8b14127-d090-4ed7-b5c2-9a1241135b77/resourceGroups/chend-rg/providers/Microsoft.Compute/virtualMachines/vm-1]
+azurerm_virtual_machine.main[2]: Refreshing state... [id=/subscriptions/f8b14127-d090-4ed7-b5c2-9a1241135b77/resourceGroups/chend-rg/providers/Microsoft.Compute/virtualMachines/vm-2]
+azurerm_key_vault_secret.password_secret[1]: Refreshing state... [id=https://chend-rg-keyvault.vault.azure.net/secrets/password-secret-1/d4a4ffa968ae40cd898460e842dcb7f1]
+azurerm_key_vault_secret.password_secret[0]: Refreshing state... [id=https://chend-rg-keyvault.vault.azure.net/secrets/password-secret-0/90597d3eba7d4be284dcbd876679aa54]
+azurerm_key_vault_access_policy.user_access["chend"]: Refreshing state... [id=/subscriptions/f8b14127-d090-4ed7-b5c2-9a1241135b77/resourceGroups/chend-rg/providers/Microsoft.KeyVault/vaults/chend-rg-keyvault/objectId/4426dbc0-bfee-4a42-b6ad-b5c88eb3422f]
+azurerm_key_vault_secret.password_secret[2]: Refreshing state... [id=https://chend-rg-keyvault.vault.azure.net/secrets/password-secret-2/ed39cbaa0b574c94abb09e7fe0c9eeb5]
+enos_remote_exec.print_results[1]: Refreshing state... [id=static]
+enos_remote_exec.print_results[0]: Refreshing state... [id=static]
+enos_remote_exec.print_results[2]: Refreshing state... [id=static]
+
+No changes. Your infrastructure matches the configuration.
+
+Terraform has compared your real infrastructure against your configuration and found no differences, so no changes are needed.
+
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+ping_results = [
+  <<-EOT
+  vm-0: PING 10.73.5.5 (10.73.5.5) 56(84) bytes of data.
+  64 bytes from 10.73.5.5: icmp_seq=1 ttl=64 time=1.67 ms
+  64 bytes from 10.73.5.5: icmp_seq=2 ttl=64 time=0.994 ms
+  64 bytes from 10.73.5.5: icmp_seq=3 ttl=64 time=1.05 ms
+  
+  --- 10.73.5.5 ping statistics ---
+  3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+  rtt min/avg/max/mdev = 0.994/1.237/1.670/0.306 ms
+  EOT,
+  <<-EOT
+  vm-1: PING 10.73.5.7 (10.73.5.7) 56(84) bytes of data.
+  64 bytes from 10.73.5.7: icmp_seq=1 ttl=64 time=1.66 ms
+  64 bytes from 10.73.5.7: icmp_seq=2 ttl=64 time=1.04 ms
+  64 bytes from 10.73.5.7: icmp_seq=3 ttl=64 time=1.26 ms
+  
+  --- 10.73.5.7 ping statistics ---
+  3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+  rtt min/avg/max/mdev = 1.036/1.315/1.655/0.256 ms
+  EOT,
+  <<-EOT
+  vm-2: PING 10.73.5.6 (10.73.5.6) 56(84) bytes of data.
+  64 bytes from 10.73.5.6: icmp_seq=1 ttl=64 time=1.49 ms
+  64 bytes from 10.73.5.6: icmp_seq=2 ttl=64 time=0.585 ms
+  64 bytes from 10.73.5.6: icmp_seq=3 ttl=64 time=0.901 ms
+  
+  --- 10.73.5.6 ping statistics ---
+  3 packets transmitted, 3 received, 0% packet loss, time 2026ms
+  rtt min/avg/max/mdev = 0.585/0.990/1.485/0.372 ms
+  EOT,
+]
+vm_ips = [
+  "10.73.5.6",
+  "10.73.5.5",
+  "10.73.5.7",
+]
